@@ -1,8 +1,11 @@
-module github.com/pulumi/pulumi-xyz/provider
+module github.com/pulumi/pulumi-sleep/provider
 
-go 1.21
+go 1.20
 
-require github.com/pulumi/pulumi-go-provider v0.11.1
+require (
+	github.com/pulumi/pulumi-go-provider v0.11.1
+	github.com/pulumi/pulumi/sdk/v3 v3.79.0
+)
 
 require (
 	dario.cat/mergo v1.0.0 // indirect
@@ -33,6 +36,8 @@ require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
+	github.com/kr/pretty v0.3.1 // indirect
+	github.com/kr/text v0.2.0 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/mitchellh/go-ps v1.0.0 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
@@ -44,7 +49,6 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pkg/term v1.1.0 // indirect
 	github.com/pulumi/pulumi/pkg/v3 v3.79.0 // indirect
-	github.com/pulumi/pulumi/sdk/v3 v3.79.0 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/rogpeppe/go-internal v1.11.0 // indirect
 	github.com/sabhiram/go-gitignore v0.0.0-20210923224102-525f6e181f06 // indirect

@@ -7,32 +7,32 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Pulumi.Xyz
+namespace Pulumi.Sleep
 {
-    [XyzResourceType("xyz:index:Random")]
-    public partial class Random : global::Pulumi.CustomResource
+    [SleepResourceType("sleep:index:Sleep")]
+    public partial class Sleep : global::Pulumi.CustomResource
     {
-        [Output("length")]
-        public Output<int> Length { get; private set; } = null!;
-
         [Output("result")]
         public Output<string> Result { get; private set; } = null!;
 
+        [Output("seconds")]
+        public Output<int> Seconds { get; private set; } = null!;
+
 
         /// <summary>
-        /// Create a Random resource with the given unique name, arguments, and options.
+        /// Create a Sleep resource with the given unique name, arguments, and options.
         /// </summary>
         ///
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public Random(string name, RandomArgs args, CustomResourceOptions? options = null)
-            : base("xyz:index:Random", name, args ?? new RandomArgs(), MakeResourceOptions(options, ""))
+        public Sleep(string name, SleepArgs args, CustomResourceOptions? options = null)
+            : base("sleep:index:Sleep", name, args ?? new SleepArgs(), MakeResourceOptions(options, ""))
         {
         }
 
-        private Random(string name, Input<string> id, CustomResourceOptions? options = null)
-            : base("xyz:index:Random", name, null, MakeResourceOptions(options, id))
+        private Sleep(string name, Input<string> id, CustomResourceOptions? options = null)
+            : base("sleep:index:Sleep", name, null, MakeResourceOptions(options, id))
         {
         }
 
@@ -48,27 +48,27 @@ namespace Pulumi.Xyz
             return merged;
         }
         /// <summary>
-        /// Get an existing Random resource's state with the given name, ID, and optional extra
+        /// Get an existing Sleep resource's state with the given name, ID, and optional extra
         /// properties used to qualify the lookup.
         /// </summary>
         ///
         /// <param name="name">The unique name of the resulting resource.</param>
         /// <param name="id">The unique provider ID of the resource to lookup.</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public static Random Get(string name, Input<string> id, CustomResourceOptions? options = null)
+        public static Sleep Get(string name, Input<string> id, CustomResourceOptions? options = null)
         {
-            return new Random(name, id, options);
+            return new Sleep(name, id, options);
         }
     }
 
-    public sealed class RandomArgs : global::Pulumi.ResourceArgs
+    public sealed class SleepArgs : global::Pulumi.ResourceArgs
     {
-        [Input("length", required: true)]
-        public Input<int> Length { get; set; } = null!;
+        [Input("seconds", required: true)]
+        public Input<int> Seconds { get; set; } = null!;
 
-        public RandomArgs()
+        public SleepArgs()
         {
         }
-        public static new RandomArgs Empty => new RandomArgs();
+        public static new SleepArgs Empty => new SleepArgs();
     }
 }
