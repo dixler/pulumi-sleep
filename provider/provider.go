@@ -78,3 +78,12 @@ func (*Sleep) Create(ctx p.Context, name string, input SleepArgs, preview bool) 
 	time.Sleep(time.Duration(input.Seconds) * time.Duration(time.Second))
 	return name, state, nil
 }
+
+func (*Sleep) Delete(ctx p.Context, id string, props SleepState) error {
+	sleepSeconds(props.Seconds)
+	return nil
+}
+
+func sleepSeconds(seconds int) {
+	time.Sleep(time.Duration(seconds) * time.Duration(time.Second))
+}
